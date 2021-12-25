@@ -24,26 +24,9 @@ class HomeController extends GetxController {
     secs.value = DateTime.now().second;
     // counter += 1;
     // sizebig != sizebig;
-    // int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    if (secs < 10) {
-      progress = 0.0;
+    if (secs > 58)
       int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    } else if (secs < 20 && secs >= 10) {
-      progress = 0.2;
-      int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    } else if (secs < 30 && secs >= 20) {
-      progress = 0.4;
-      int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    } else if (secs < 40 && secs >= 30) {
-      progress = 0.6;
-      int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    } else if (secs < 50 && secs >= 40) {
-      progress = 0.8;
-      int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    } else if (secs < 60 && secs >= 50) {
-      progress = 1.0;
-      int result = await audioPlayer.play(alarmAudioPath, isLocal: true);
-    }
+    progress = (secs / 60);
     var r = rnd.nextInt(16) * 16;
     var g = rnd.nextInt(16) * 16;
     var b = rnd.nextInt(16) * 16;
